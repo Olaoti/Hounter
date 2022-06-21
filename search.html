@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Search button dummy</title>
+        <style>
+            html{
+                width: 100%;
+                height: 100%;
+                background-color: rgb(97, 2, 97);
+            }
+            .container{
+                border: 8px solid rgb(255, 255, 255);
+                height: 400px;
+                padding-top: 200px;
+            }
+            #box{
+                font-size: 24px;
+                line-height: 30px;
+                margin: auto;
+                color: black;
+                font-weight: bold;
+                width: fit-content; /*Width of fit content automatically
+                sets the width of your box to exactly how wide your content it
+                , we also have max content and min content*/
+            }
+            .text{
+                background-color: white;
+                padding: 8px;
+                padding-right: 40px; /* Because we set the padding of 8px
+                before, that means all the sides (top, left, right and bottom) padding
+                has been set to 8px, but when you define the right to 40px again,
+                css will pick the lower one.
+                To be sure you understand what you just read, put the padding-right
+                to the top of padding and notice the changes*/
+                border-radius: 20px 0 0 20px;
+            }
+            .search{
+                color: white;
+                background-color: aqua;
+                padding: 8px 20px;
+                border-radius: 0 20px 20px 0; /*The more the border radius,
+                the curvier your box is*/
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="box">
+                <span class="text">Templator.net</span><span class="search">O</span>
+            </div>
+        </div>
+    </body>
+</html>

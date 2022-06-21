@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Index</title>
+        <style>
+            .container{
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                width: 100%;
+                gap: 50px;
+            }
+            .container div{
+                background-color: aqua;
+                height: 100px;
+                width: 100%;
+                border: 1px solid red;
+                margin: 20px;
+                font-size: 16px;
+            }
+            .container div:nth-child(2n){
+                background-color: blue;
+            }
+            .none{
+                opacity: 0;
+                font-size: 0;
+                width: 0;
+                height: 0;
+            }
+            .show{
+              opacity: 1;
+              font-size: initial;
+              width: fit-content;
+                height: fit-content;
+            }
+           
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="form">
+            <div>show one o</div>
+            <div>d .fbnm</div>
+            <div>show three</div>
+            <div>f dfns,</div>
+            <div>show 4oooooo</div>
+            <div>sho2 5pooooo</div>
+            <div>6666666</div>
+            <div>777777777</div>
+            <div>88888888888</div>
+            <div>99999999999999999</div>
+        </div>
+        <script>
+            var divs = document.querySelectorAll('.container>div')
+            var divArr = Array.from(divs)
+            var forms = document.querySelectorAll('.form>div')
+            var formsArr = Array.from(forms)
+            forms.forEach((form)=>{
+                form.classList.add('none')
+            divs.forEach((div)=>{
+                form.classList.add(formsArr.indexOf(form))
+                div.addEventListener('click', function(event){
+                    var target=event.target;
+                    if(form.classList.contains(divArr.indexOf(div))){
+                        form.classList.add('show')
+                        form.classList.remove('none')
+                    }
+                    else if(form.classList.contains('show')&& (!form.classList.contains(divArr.indexOf(div)))){
+                        form.classList.remove('show')
+                        form.classList.add('none')
+                    }
+                    if(form.classList.contains('show')){
+                        divArr[formsArr.indexOf(form)].style.backgroundColor='green'
+                    }
+                   else if(form.classList.contains('none')){
+                    divArr[formsArr.indexOf(form)].style.backgroundColor='red'
+                   }
+                  /*  if(!div.classList.contains(formsArr.indexOf(form))){
+                        div.style.backgroundColor='white'
+
+                    }
+                   /* if((div.style.backgroundColor='red')&&(!div.classList.contains(formsArr.indexOf(form)))){
+                        div.style.backgroundColor='white'
+                    }*/
+
+                })
+            })
+        })
+        </script>
+    </body>
+</html>
